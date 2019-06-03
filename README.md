@@ -198,14 +198,17 @@ Den Reverse Proxy habe ich mit folgdenden Befehlen eingerichtet:
         </Proxy>
 
         # Weiterleitungen master
-        ProxyPass /master http://master
-        ProxyPassReverse /master http://master
+        ProxyPass /website http://localhost
+        ProxyPassReverse / http://localhost
 
     </VirtualHost>
     EOL
 
 ```
 Mit Cat habe ich mehrere Zeilen Inhalt in die Datei 000-default.conf hinzugefügt. 
+Nun kann man im Browser die IP-Adresse vom Webserver angeben und */website* und man gelangt zur Website.
+![Reverse Proxy](./images/reverse_proxy.png)
+
 
 ### Benutzer- und Rechtevergabe ist eingerichtet
 Ich habe einen zweiten "standard" Benutzer eingerichtet, der nicht zu viele Rechte erhalten sollte. Ausserdem habe ich eine neue Gruppe erstellt, wo all die "standard" Benutzer zugewiesen werden. Zum Test habe ich auch ein File erstellt mit bestimmten Berechtigungen. 

@@ -61,8 +61,8 @@ cat >> /etc/apache2/sites-available/000-default.conf<<EOL
     </Proxy>
 
     # Weiterleitungen master
-    ProxyPass /master http://master
-    ProxyPassReverse /master http://master
+    ProxyPass /website http://localhost
+    ProxyPassReverse / http://localhost
 
 </VirtualHost>
 EOL
