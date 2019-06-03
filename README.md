@@ -1,6 +1,18 @@
 # M300-Services
 Dokumentation für das Modul 300
 
+## Inhaltsvverzeichnis
+* Einleitung - [Einleitung](#einleitung)
+* 01 - [K1](#k1)
+* 02 - [K2](#k2)
+* 03 - [K3](#k3)
+* 04 - [K4](#k4)
+* 05 - [K5](#k5)
+
+## Einleitung
+In diesem Projekt werde ich mittes Vagrant drei virtuelle Maschinen automatisiert erstellen. Dabei werde ich einen Server und zwei Clients installieren. Der Server ist ein Webserver, der mit Apache2 betrieben wird. Für die zwei Clients habe ich einen Client im selben Netz wie der Server hinzugefügt und der zweite Client ist in einem externen Netz. Die beiden Clients haben die neusten Updates installiert. Die Website kann von meinem Host aus betrachtet. 
+
+
 ## K1
 ### Virtualbox
 Virtualbox ist eine Virtualisierungssoftware welches von Orace nun entwickelt wird. Die in den nächsten Schritten erstellten virtuellen Maschinen werden auf Virtualbox laufen und geöffnet.
@@ -24,11 +36,12 @@ Der SSH-Key wird auf dem Windows-Clinet in der Bash installiert. Die Software ka
 ```
     $  ssh-keygen -t rsa -b 4096 -C "beispiel@beispiel.com
 ```
-2 Neue Keys erstellen
+2. Neue Keys erstellen
 ```
     Generating public/private rsa key pair
 ```
 3. Bei der Frage wo und unter welchem Namen der Key gespeichert werden solll klickt man auf enter.
+
 ```
     Enter a file in which to save the key (~/.ssh/id_rsa): [Press enter]
 ```
@@ -115,7 +128,7 @@ Möchte man alle Boxen auflisten kann man das mit folgendem Befehl machen.
 
 ## K4
 ### FireWall eingerichtet inkl. Rules
-Die Firewall wurde mit folgenden Befehlen eingerichtet und konfiguriert. Ich habe mich dafür entschieden, dass Port 80 offen ist, damit man auch auf die Website gelangen kann. 
+Die Firewall wurde mit folgenden Befehlen eingerichtet und konfiguriert. Ich habe mich dafür entschieden, dass Port 80 offen ist, damit man auch auf die Website gelangen kann. Auch habe ich den Port 22 geöffnet, damit mit SSh verbunden werden kann. 
 ```
         #firewall installieren
         sudo apt-get -y install ufw
@@ -125,10 +138,26 @@ Die Firewall wurde mit folgenden Befehlen eingerichtet und konfiguriert. Ich hab
 
         #Port 80 öffnen für alle
         sudo ufw allow 80/tcp
-    ```
-    Reverse-Proxy eingerichtet
-    Den Reverse Proxy habe ich mit folgdenden Befehlen eingerichtet: 
-    ```
+        
+        #Port 22 öffnen
+        sudo ufw allow 22/tcp
+```
+Möchte man die aktiven FireWall Rules anschauen, kann man das mit einem Befehl machen. 
+```
+    ~$ sudo ufw status
+    Status: active
+
+    To                         Action      From
+    --                         ------      ----
+    80/tcp                     ALLOW       Anywhere
+    22/tcp                     ALLOW       Anywhere
+    80/tcp (v6)                ALLOW       Anywhere (v6)
+    22/tcp (v6)                ALLOW       Anywhere (v6)
+```
+### Reverse-Proxy eingerichtet
+Den Reverse Proxy habe ich mit folgdenden Befehlen eingerichtet:  
+    
+```
     #Proxserver einrichten
     sudo apt-get -y install apache2-bin libxml2-dev
     sudo service apache2 restart
@@ -198,9 +227,5 @@ Parameter kurz erklärt:
 * usermod -aG fügt einen Benutzer in weiteren Gruppen hinzu
 
 ## K5
-## Reflexion
+### Reflexion
 Durch diese Übungen habe ich einiges dazu gelernt. So wusste ich zu beginn nicht, dass man so schnell und einfach eine Vm erstellen kann und nun erstelle ich mit wenigen Zeilen Code einen Webserver und zwei Clients. Ich finde dieses Modul eines der spannendsten Module bisher. Vorallem kann ich nun mein Wissen mit Vagrant auch gut gebrauchen. Schwierigkeiten erbrachte mir ein Wenig das Scripten mit Bash, da ich das nicht sehr oft mache. 
-
-
-
-![godzilla.jpg](./images/godzilla.jpg)
