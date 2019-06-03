@@ -39,8 +39,8 @@ Der SSH-Key wird auf dem Windows-Clinet in der Bash installiert. Die Software ka
 ```
 
 
-##K2
-###GitHub oder Gitlab-Account ist erstellt
+## K2
+### GitHub oder Gitlab-Account ist erstellt
 Einen Account für GitHub kann unter https://github.com/ erstellt werden.
 Dort muss man die üblichen Informationen wie z.B die E-Mailadresse, der Benutzername, das Passwort angeben. Am Schluss erhaltet man noch eine E-Mail um den Account zu bestätigen.
 ### Git-Client wurde verwendet
@@ -53,21 +53,24 @@ Nachfogend werden ein paar Befehle aufgelistet.
 | git commit   | Wird das Gespeicherte bestätigt                                                                                                                                                             |
 | git checkout | Mit diesem Befehl wechselt man unter den verschiedenen Branches (z.B git checkout Test123). Auch können mittels Paramater z.B. -b einen neuen Branch erstellt und gleich gewechselt werden. |
 | git clone    | Mit diese Befehl klont man ein Repository aus einem Git. |
-| git push | Mit diesem Befehl wird ein Upload bzw. ein push durchgeführt|                                                           
-###Dokumentation ist als Mark Down vorhanden
+| git push | Mit diesem Befehl wird ein Upload bzw. ein push durchgeführt|     
+
+### Dokumentation ist als Mark Down vorhanden
 Die Dokumentation ist in Visual Studio Dokumentiert. 
 ![Makrdown Editor](./images/markdown_documentation.png)
-###Mark Down-Editor ausgewählt und eingerichtet
+
+### Mark Down-Editor ausgewählt und eingerichtet
 Als Mark Down-Editor verwende ich den Editor von Yu Zhang. Dieser Editor ist vom Design angenehm und bietet auch Shortcuts an. Ein Beispiel für so ein Shortcut wäre Ctrl+B. Hier werden gleich die ** erstellt, welche man braucht um etwas **Fett** zu schreiben. 
 ![Makrdown Editor](./images/markdown_editor.png)
-##K3
-###Bestehende vm aus Vagrant-Cloud einrichten
+
+## K3
+### Bestehende vm aus Vagrant-Cloud einrichten
 Um eine bestehende VM mit Vagrant einzurichten muss zuerst das Vagrantfile vorhanden sein. Dafür habe ich das Repository "M300" heruntergeladen. DAnach bin ich in das Verzeichnis in der GitBash gewechselt wo das Vagrantfile hinterlegt ist und habe die VM mit folgendem Befehl erstellt.
 ```
     Vagrant up
 ```
 ![bestehende VM](./images/bestehende_vm_vagrant.png)
-###andere, vorgefertigte vm auf eigenem Notebook aufgesetzt
+### andere, vorgefertigte vm auf eigenem Notebook aufgesetzt
 Eine Vagrant-Box aus der Vagrant-Cloud zu holen und eine VM zu ersellen ist mit zwei Zeilen Befehl möglich. 
 ```
     vagrant init centos/7
@@ -110,7 +113,8 @@ Möchte man alle Boxen auflisten kann man das mit folgendem Befehl machen.
           |NAT: -                                                           |               
           +---------------------+--------------------+----------------------+               
 
-###FireWall eingerichtet inkl. Rules
+## K4
+### FireWall eingerichtet inkl. Rules
 Die Firewall wurde mit folgenden Befehlen eingerichtet und konfiguriert. Ich habe mich dafür entschieden, dass Port 80 offen ist, damit man auch auf die Website gelangen kann. 
 ```
         #firewall installieren
@@ -174,7 +178,7 @@ Die Firewall wurde mit folgenden Befehlen eingerichtet und konfiguriert. Ich hab
 ```
 Mit Cat habe ich mehrere Zeilen Inhalt in die Datei 000-default.conf hinzugefügt. 
 
-###Benutzer- und Rechtevergabe ist eingerichtet
+### Benutzer- und Rechtevergabe ist eingerichtet
 Ich habe einen zweiten "standard" Benutzer eingerichtet, der nicht zu viele Rechte erhalten sollte. Ausserdem habe ich eine neue Gruppe erstellt, wo all die "standard" Benutzer zugewiesen werden. Zum Test habe ich auch ein File erstellt mit bestimmten Berechtigungen. 
 
 ```
@@ -193,11 +197,10 @@ Parameter kurz erklärt:
 * --gid erstellt Gruppe mit bestimmter ID
 * usermod -aG fügt einen Benutzer in weiteren Gruppen hinzu
 
-
-##Reflexion
+## K5
+## Reflexion
 Durch diese Übungen habe ich einiges dazu gelernt. So wusste ich zu beginn nicht, dass man so schnell und einfach eine Vm erstellen kann und nun erstelle ich mit wenigen Zeilen Code einen Webserver und zwei Clients. Ich finde dieses Modul eines der spannendsten Module bisher. Vorallem kann ich nun mein Wissen mit Vagrant auch gut gebrauchen. Schwierigkeiten erbrachte mir ein Wenig das Scripten mit Bash, da ich das nicht sehr oft mache. 
 
 
-#Hallo Kevin :D
 
 ![godzilla.jpg](./images/godzilla.jpg)
