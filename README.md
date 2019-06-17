@@ -114,7 +114,7 @@ Möchte man alle Boxen auflisten kann man das mit folgendem Befehl machen.
           |                                                                 |               
           +-----------------------------------------------------------------+               
           |Web Server           |                    |Client intern         |               
-          |Host: osticket01     |                    |Host: client-int      |               
+          |Host: webserver      |                    |Host: client-int      |               
           |IP: 10.0.0.10        | <----------------> |IP: 10.0.0.20         |               
           |Port: 80 TCP, 443 TCP|          |         |Port: -               |               
           |NAT: 8080, 4343      |          |         |NAT: -                |               
