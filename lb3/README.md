@@ -10,7 +10,7 @@ Dokumentation für das Modul 300
 * 05 - [K5](#k5)
 
 ## Einleitung
-Vieles wird hier automatisiert mit Hilfe von einem Vagrantfile und unterschiedlichen Scripts. Die Files können oben in der Sammlung betrachtet werden. 
+Vieles wird hier automatisiert mit Hilfe von einem Vagrantfile und unterschiedlichen Scripts. Die Files können oben in der Sammlung betrachtet werden. Mit dieser Arbeit habe ich hauptsächlich mit Docker, Jenksins, Microservice und Ghost gearbeitet. Meine Erkenntnise und Reflexion habe ich weiter unten Dokumentiert. Vieles der Arbeiten wurden mit Kevin Frunz erarbeitet. Dabei haben wir aber beide unsere je selber am PC durchgeführt. 
 
 ## K1
 K1 wurde mit der LB2 bereits erledigt und kann
@@ -106,38 +106,38 @@ Vieles wird bei mir über ein script gemacht. Beispielsweise die Firewallrules o
 ### Netzwerkplan
 
 
-+------------------------------------------------------------------------------------------------+
-| Netzwerk: 10.0.2.0/24                                                                          |
-|+----------------------------------------------------------------------------------------------+|
-|| Hostname: ch-web01                                                                           ||
-|| OS: Ubunt  16.04 LTS                                                                         ||
-||                                                                                              ||
-|| LAN enp3s0: 10.0.2.15                                                                        ||
-|| Docker docker0: 172.17.0.1                                                                   ||
-|| Port: 80, 443, 8080, 8082                                                                    ||
-|| NAT: 32760-32780, 80, 8080, 8081, 8082, 3306, 2368                                           ||
-||                                                                                              ||
-|| +-----------------------------------------+      +-----------------------------------------+ ||
-|| | Ghost Container                       |      | Apache Container                        | ||
-|| | Ports: 8080, 2368                       |      | Ports: 80, 443, 8081                    | ||
-|| | Version: 2.60.3                         |      | Version: 14.04                          | ||
-|| | Plugins: git-client, docker-engine      |      | Plugins: -                              | ||
-|| |                                         |      |                                         | ||
-|| |                                         |      |                                         | ||
-|| +-----------------------------------------+      +-----------------------------------------+ ||
-|+----------------------------------------------------------------------------------------------+|        |                                                                                                |
-|+----------------------------------------------------------------------------------------------+|
-|| Hostname: ch-db01                                                                            ||
-|| OS: Ubunt  16.04 LTS                                                                         ||
-||                                                                                              ||
-|| LAN enp3s0: 10.0.2.16                                                                        ||
-|| Docker docker0: 172.17.0.2                                                                   ||
-|| Port: 80, 443, 3306                                                                          ||
-|| NAT: 32760-32780, 80, 8080, 8081, 8082, 3306,                                                ||
-||                                                                                              ||
-|| 
-|+----------------------------------------------------------------------------------------------+|
-+------------------------------------------------------------------------------------------------+
+    +------------------------------------------------------------------------------------------------+
+    | Netzwerk: 10.0.2.0/24                                                                          |
+    |+----------------------------------------------------------------------------------------------+|
+    || Hostname: ch-web01                                                                           ||
+    || OS: Ubunt  16.04 LTS                                                                         ||
+    ||                                                                                              ||
+    || LAN enp3s0: 10.0.2.15                                                                        ||
+    || Docker docker0: 172.17.0.1                                                                   ||
+    || Port: 80, 443, 8080, 8082                                                                    ||
+    || NAT: 32760-32780, 80, 8080, 8081, 8082, 3306, 2368                                           ||
+    ||                                                                                              ||
+    || +-----------------------------------------+      +-----------------------------------------+ ||
+    || | Ghost Container                       |      | Apache Container                        | ||
+    || | Ports: 8080, 2368                       |      | Ports: 80, 443, 8081                    | ||
+    || | Version: 2.60.3                         |      | Version: 14.04                          | ||
+    || | Plugins: git-client, docker-engine      |      | Plugins: -                              | ||
+    || |                                         |      |                                         | ||
+    || |                                         |      |                                         | ||
+    || +-----------------------------------------+      +-----------------------------------------+ ||
+    |+----------------------------------------------------------------------------------------------+|        |                                                                                                |
+    |+----------------------------------------------------------------------------------------------+|
+    || Hostname: ch-db01                                                                            ||
+    || OS: Ubunt  16.04 LTS                                                                         ||
+    ||                                                                                              ||
+    || LAN enp3s0: 10.0.2.16                                                                        ||
+    || Docker docker0: 172.17.0.2                                                                   ||
+    || Port: 80, 443, 3306                                                                          ||
+    || NAT: 32760-32780, 80, 8080, 8081, 8082, 3306,                                                ||
+    ||                                                                                              ||
+    || 
+    |+----------------------------------------------------------------------------------------------+|
+    +------------------------------------------------------------------------------------------------+
 
 
 ## K4
