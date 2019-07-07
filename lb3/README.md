@@ -22,6 +22,61 @@ Meine Dokumentation über Git habe ich bereits [hier](https://github.com/GuitAri
 Ich besuche jeweils Mitwochs das Wahlmodul 901 und habe dort schon einiges über Docker gehört. Einzelte Arbeiten konnte ich auch schon mit Docker machen, sehe mich aber, bezüglich des Wissensstands, als Anfänger. Einen Microservice habe ich auch mal erstellt. Der Microservice den ich erstellt habe, hatte eine Website mit "Hello World" gezeigt. 
 
 ## K3
+Meine Dockerumgebung wird automatisiert durch ein Vagrantfile erstellt. Neben dem Vagrantfile werden natürlich auch Scripts ausgeführt. 
+
+    Vagrant.configure(2) do |config|
+
+    config.vm.define "webserver" do |web|
+        web.vm.box = "ubuntu/xenial64"
+        web.vm.hostname = "webserver"
+        web.vm.network "private_network", ip: "10.0.0.10"
+
+        web.vm.network "forwarded_port", guest:2368, host:2368, auto_correct: true
+        web.vm.network "forwarded_port", guest:8081, host:8081, auto_correct: true
+        web.vm.network "forwarded_port", guest:8080, host:8080, auto_correct: true
+
+
+
+
+        web.vm.provider "virtualbox" do |vb|
+            vb.memory = "1024"
+            vb.name = "webserver"
+        end
+
+        # Docker Provisioner
+        web.vm.provision "docker" do |d|
+            d.pull_images "ubuntu:14.04"
+        end
+
+        web.vm.synced_folder ".", "/vagrant"
+        web.vm.provision "shell", path: "webserver.sh"
+
+        #Shell Script Part Updating APT Repository and create Synch Folder
+        web.vm.provision :shell, inline: <<-SHELL
+            sudo apt-get update
+            mkdir /etc/shared
+        SHELL
+
+
+        # Docker Provisioner (Install image)
+        web.vm.provision "docker" do |d|
+            d.pull_images "ubuntu:14.04"
+        end
+
+        web.vm.synced_folder ".", "/vagrant"
+        web.vm.provision "shell", path: "microservice/helloworld.sh"
+
+        web.vm.synced_folder ".", "/vagrant"
+        web.vm.provision "shell", path: "ghost.sh"
+
+        web.vm.synced_folder ".", "/vagrant"
+        web.vm.provision "shell", path: "jenkins/jenkins.sh"
+
+        end
+    end
+
+
+
 ### Kennt die Docker spezifischen Befehle
 **Was ist Docker?**
 
