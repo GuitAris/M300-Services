@@ -105,6 +105,7 @@ Vieles wird bei mir über ein script gemacht. Beispielsweise die Firewallrules o
 
 ### Netzwerkplan
 
+
 +------------------------------------------------------------------------------------------------+
 | Netzwerk: 10.0.2.0/24                                                                          |
 |+----------------------------------------------------------------------------------------------+|
@@ -137,6 +138,7 @@ Vieles wird bei mir über ein script gemacht. Beispielsweise die Firewallrules o
 || 
 |+----------------------------------------------------------------------------------------------+|
 +------------------------------------------------------------------------------------------------+
+
 
 ## K4
 ### Service-überwachung ist eingerichet
@@ -275,7 +277,7 @@ Auch benötigt Jensinks ein Jenkinsfile, weches folgendermassen aussehen kann. D
 ### Image bereitstellung
 Wird das Vagrantfile ausgeführt, wird neben vielen anderen Sachen auch eine Ubuntu-Image bereitgestellt. 
 
- # Docker Provisioner (Install image)
+    # Docker Provisioner (Install image)
     web.vm.provision "docker" do |d|
         d.pull_images "ubuntu:14.04"
     end
