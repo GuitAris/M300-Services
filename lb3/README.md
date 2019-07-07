@@ -156,6 +156,14 @@ Vieles wird bei mir über ein script gemacht. Beispielsweise die Firewallrules o
     do
         sudo ufw allow $i
     done
+    
+    #Neuer Benutzer erstellen mit Home-Directory
+    sudo useradd -m oscar
+    #Neue Gruppe erstellen
+    sudo addgroup --gid 2000 standard_group
+    #Benutzer Gruppe hinzufügen
+    sudo usermod -aG standard_group oscar
+
 
 
 ### Netzwerkplan
