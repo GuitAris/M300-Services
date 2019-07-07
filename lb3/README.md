@@ -14,10 +14,10 @@ Vieles wird hier automatisiert mit Hilfe von einem Vagrantfile und unterschiedli
 
 ## K1
 K1 wurde mit der LB2 bereits erledigt und kann
-![hier](https://github.com/GuitAris/M300-Services/tree/master/lb2#k1) genauer betrachtet werden.
+[hier](https://github.com/GuitAris/M300-Services/tree/master/lb2#k1) genauer betrachtet werden.
 
 ## K2
-Meine Dokumentation über Git habe ich bereits ![hier](https://github.com/GuitAris/M300-Services/tree/master/lb2#k2) dokumentiert. 
+Meine Dokumentation über Git habe ich bereits [hier](https://github.com/GuitAris/M300-Services/tree/master/lb2#k2) dokumentiert. 
 ### Wissensstand
 Ich besuche jeweils Mitwochs das Wahlmodul 901 und habe dort schon einiges über Docker gehört. Einzelte Arbeiten konnte ich auch schon mit Docker machen, sehe mich aber, bezüglich des Wissensstands, als Anfänger. Einen Microservice habe ich auch mal erstellt. Der Microservice den ich erstellt habe, hatte eine Website mit "Hello World" gezeigt. 
 
