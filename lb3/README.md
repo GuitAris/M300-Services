@@ -283,7 +283,7 @@ Mein Script, welches nach der Erstellung der VM ein Container erstellt, sieht so
     sudo docker build -t jenkins .
     sudo docker run -d --name jenkins -p 8080:8080 --rm -v /var/run/docker.sock -v /vagrant:/vagrant   jenkins
 
-Auch benötigt Jensinks ein Jenkinsfile, weches folgendermassen aussehen kann. Dieses File ist von Kevin Frunz: 
+Auch benötigt Jensinks ein Jenkinsfile, weches folgendermassen aussehen kann. 
 
     
     apiVersion: extensions/v1beta1
